@@ -1,0 +1,292 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+  <style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.command {
+	cursor: pointer;
+	color: #111;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.result {
+  color: #111;
+  font-size: 36px;
+}
+
+body{
+    background-color: lightgrey;
+    font-family: "Lucida Console";
+}
+
+div.absolute {
+    background-color: lightgrey;
+    width: 900px;
+    border: 15px solid #111;
+    padding: 70px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 410px;
+    align-self: "center";
+}
+  </style>
+
+</head>
+
+<body>
+  <script type="text/ng-template" id="">
+    <br>
+  <h1 align="center"> Welcome to Omkar Drop Taxi </h1>
+  <br>
+  <br>
+  <h1 align="center"> We Go the
+    Extra Mile for You </h1>
+
+  <h1 align="center">Need a outstation ride in Tamilnadu ? We can help.</h1>
+
+  <h1 align="center">  The most reliable drop taxi in Tamilnadu .</h1>
+  </script>
+
+  <script type="text/ng-template" id="calculator.html">
+      <h1 align = "center">A Simple Calculator Application using AngularJS</h1>
+      <br>
+      <div align = "center" class = "absolute">
+        <table>
+          <tr>
+            <td>Num 1 = </td>
+            <td><input ng-model="a" /></td>
+          </tr>
+          <tr>
+            <td>Num 2 = </td>
+            <td><input ng-model="b" /></td>
+          </tr>
+          <tr>
+            <td>Select Operator : </td>
+            <td>
+              <select ng-model="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+                <option value="^">^</option>
+              </select>
+              <button class="command" ng-click="rev()">swap</button>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <b class="result">{{na()}} {{operation}} {{nb()}} = {{calculate()}}</b>
+      </div>
+    </script>
+  <script type="text/ng-template" id="taskscheduler.html">
+    <h1>
+      About Us
+    </h1>
+
+    <h3>Our services:-</h3>
+
+    <li>One-Way Cab Booking</li><br>
+    <li>Drop Trips </li><br>
+    <li>One-Way & Round Trip Taxi</li><br>
+    <li>One-Way Taxi Drop Taxi</li><br>
+    <li>One-Way Cab</li><br>
+    <li>Tourist cabs booking.</li><br>
+    </ul>
+    
+    ​
+    <br><br>
+    Our service routes :-
+    Omkar Cabs  services offered assured one way drop & round  trips in the following cities provided you book your cabs at least 6-10 hours in advance.
+    
+    Chennai, Pondicherry, Bangalore, Hosur, Trichy, Vellore, Neyveli, Kumbakonam.
+    
+    Greater Chennai and Surrounding towns of the above cities are also serviced.
+    
+    Greater Chennai – Bangalore city
+    
+    Pondicherry – Cuddalore, Tindivanam
+    
+    Vellore – Tirupattur, Vaniyambadi, Ambur, Ranipet, Arcot,
+    
+    Arni & Melvisharam,Chennai –Neyveli,Chidambaram, Vridachalam, Kattumannarkoil, Vadalur, Panruti
+    
+    Villuppuram – Ulunurpettai, Gingee, Thiruvannamalai, Polur, Melmalayanur, Chetput
+    
+     
+    Additional charges details
+    Toll fees, Inter-State Permit charges (if any) are extra borne by customer.
+    
+    Drop Trips – Driver Beta Rs. 300. [Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.
+    
+    Drop Trips – Minimum running must be 130 Kms per day.
+    
+    Round Trips – Driver beta is Rs. 400/- per day.
+
+    </script>
+
+<ul>
+  <li><a class="active" href="#/">Home</a></li>
+  <li><a href="#/calculator">Pricing</a></li>
+  <li><a href="#/taskscheduler">About</a></li>
+  <li><a href="#/taskscheduler">Contact</a></li>
+</ul>
+
+  <div ng-view></div>
+
+</ul>
+
+</body>
+
+</html>
+
+<script>
+  var app = angular.module('myApp', ['ngRoute']);
+
+  app.config(function ($routeProvider) {
+    $routeProvider
+
+
+      .when('/', {
+        templateUrl: '',
+      })
+
+      .when('/calculator', {
+        templateUrl: 'calculator.html',
+        controller: 'CalcController'
+      })
+
+      .when('/taskscheduler', {
+        templateUrl: 'taskscheduler.html',
+        controller: 'TaskController'
+      })
+
+      .otherwise({ redirectTo: '/' });
+  });
+
+  app.controller('CalcController', function ($scope) {
+
+    $scope.a = 0;
+    $scope.b = 0;
+    $scope.operation = '+';
+
+    $scope.na = function () {
+      return $scope.a - 0;
+    }
+
+    $scope.nb = function () {
+      return $scope.b - 0;
+    }
+
+    $scope.rev = function () {
+      var temp = $scope.na();
+      $scope.a = $scope.nb();
+      $scope.b = temp;
+    }
+
+    $scope.calculate = function () {
+      if ($scope.operation == '+') {
+        return $scope.na() + $scope.nb();
+      }
+      else if ($scope.operation == '-') {
+        return $scope.a - $scope.b;
+      }
+      else if ($scope.operation == '*') {
+        return $scope.a * $scope.b;
+      }
+      else if ($scope.operation == '/') {
+        return $scope.a / $scope.b;
+      }
+
+      else if ($scope.operation == '%') {
+        return $scope.na() % $scope.nb();
+      }
+
+      else if ($scope.operation == '^') {
+        return $scope.a ** $scope.b;
+      }
+
+      else return "undef";
+    }
+
+  });
+
+  app.service('randomno', function () {
+
+    this.getRandomInt = function (min, max) {
+
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+
+    }
+  });
+
+  app.controller('TaskController', function ($scope, $interval, $timeout) {
+    $scope.names = [
+      { name: 'Lunch', time: "13:00" },
+      { name: 'Assignment', time: "17:00" },
+      { name: 'Quiz', time: "14:10" },
+      { name: 'Code Upload', time: "15:00" },
+      { name: 'Pray', time: "20:00" },
+      { name: 'Coffee', time: "16:30" },
+      { name: 'Tiffin', time: "19:15" },
+      { name: 'NPTEL', time: "18:15" },
+      { name: 'Dinner', time: "22:00" }
+    ];
+    $scope.orderByMe = function (x) {
+      $scope.myOrderBy = x;
+    }
+    $scope.theTime = new Date().toLocaleTimeString();
+    $interval(function () {
+      $scope.theTime = new Date().toLocaleTimeString();
+    }, 1000);
+    $scope.myHeader = "Stop Procrastinating!!! Start working!!!";
+    $timeout(function () {
+      $scope.myHeader = " Start working!!!";
+    }, 2000);
+
+
+  });
+
+  app.component("motivate", {
+    template: "<h4>Hello!, Work harder!!! You are already better in time management, than {{getresult}}% of our Users!!<h4>",
+    bindings: { name: '@' },
+    controller: function ($scope, randomno) {
+      $scope.getresult = randomno.getRandomInt(1, 100);
+
+    }
+  });
+
+
+
+</script>
+</body>
+
+</html>
