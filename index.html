@@ -2,6 +2,10 @@
 <html ng-app="myApp">
 
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
   <style>
@@ -62,6 +66,20 @@ div.absolute {
 </head>
 
 <body>
+
+  <style>
+    body{
+      background-image: url("cars.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+    }
+    .abtus{
+      text-shadow: 0 0 5px #000;
+      color: white;
+      /* background-image: url("aboutus.jpg"); */
+    }
+  </style>
   <script type="text/ng-template" id="">
     <br>
   <h1 align="center"> Welcome to Omkar Drop Taxi </h1>
@@ -72,42 +90,41 @@ div.absolute {
 
   <h1 align="center">Need a outstation ride in Tamilnadu ? We can help.</h1>
 
-  <h1 align="center">  The most reliable drop taxi in Tamilnadu .</h1>
+  <h1 align="center">  The most reliable drop taxi in Tamilnadu.</h1><br>
+<br>
+<div class="container">
+  <div class="row" align="center">
+    <div class="col-sm" style="border-right: 2px solid #FFF;">
+      <h4>Drop Taxi Service</h4><br>
+      We offer you the most affordable travel solutions.<br> Now pay only for the drop. <br>One way drop taxi in Tamilnadu.<br> Pre book Now.
+    </div>
+    <div class="col-sm" style="border-right: 2px solid #FFF;">
+      <h4>Airport Pickup</h4><br>
+      From Chennai Airport to anywhere<br> in tamilnadu, book us for a <br>hassle free journey. Book cabs from<br> Chennai airport.
+    </div>
+    <div class="col-sm">
+      <h4>Roundtrip Services</h4><br>
+      We wait for you and bring you<br> back at lowest cost. We ensure<br> safe and comfortable round trip<br> journey with us. Book us <br>for round trip services from Tamilnadu.
+    </div>
+  </div>
+</div>
+<br><br>
+
+  <h1 align="center">About Omkar Drop Taxi</h1>
+  <h5 align="center">Being a pioneer in safe driving  and with the passionate in driving job,<br> Mr Srini (Founder of Omkar drop taxi) started the organization in 2017.<br> With the supportive and loyal customer base, Omkar drop taxi is successfully<br> stepping into 3rd Year Journey in Nov 2020.
+
+<br><br>​We offer One-Way Cab Booking / Drop Trips / One-Way & Round Trip Taxi /<br>One-Way Taxi Drop Taxi / One-Way Cab / Tourist cabs booking.</h5>
+
+<center><a href = "./index.html#/aboutus" style="color:white">Read More</a></center>
   </script>
 
-  <script type="text/ng-template" id="calculator.html">
-      <h1 align = "center">A Simple Calculator Application using AngularJS</h1>
-      <br>
-      <div align = "center" class = "absolute">
-        <table>
-          <tr>
-            <td>Num 1 = </td>
-            <td><input ng-model="a" /></td>
-          </tr>
-          <tr>
-            <td>Num 2 = </td>
-            <td><input ng-model="b" /></td>
-          </tr>
-          <tr>
-            <td>Select Operator : </td>
-            <td>
-              <select ng-model="operation">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
-                <option value="%">%</option>
-                <option value="^">^</option>
-              </select>
-              <button class="command" ng-click="rev()">swap</button>
-            </td>
-          </tr>
-        </table>
-        <br>
-        <b class="result">{{na()}} {{operation}} {{nb()}} = {{calculate()}}</b>
-      </div>
+  <script type="text/ng-template" id="pricing.html">
     </script>
-  <script type="text/ng-template" id="taskscheduler.html">
+
+    <script type="text/ng-template" id="contactus.html">
+    </script>
+  <script type="text/ng-template" id="aboutus.html">
+    <div class="abtus">
     <h1>
       About Us
     </h1>
@@ -124,40 +141,40 @@ div.absolute {
     
     ​
     <br><br>
-    Our service routes :-
-    Omkar Cabs  services offered assured one way drop & round  trips in the following cities provided you book your cabs at least 6-10 hours in advance.
+    <h3>Our service routes :-</h3>
+    Omkar Cabs  services offered assured one way drop & round  trips in the following cities provided you book your cabs at least 6-10 hours in advance.<br><br>
     
     Chennai, Pondicherry, Bangalore, Hosur, Trichy, Vellore, Neyveli, Kumbakonam.
-    
+    <br><br>
     Greater Chennai and Surrounding towns of the above cities are also serviced.
+    <br><br>
+    Greater Chennai – Bangalore city <br>
     
-    Greater Chennai – Bangalore city
+    Pondicherry – Cuddalore, Tindivanam <br>
     
-    Pondicherry – Cuddalore, Tindivanam
+    Vellore – Tirupattur, Vaniyambadi, Ambur, Ranipet, Arcot, <br>
     
-    Vellore – Tirupattur, Vaniyambadi, Ambur, Ranipet, Arcot,
+    Arni & Melvisharam,Chennai –Neyveli,Chidambaram, Vridachalam, Kattumannarkoil, Vadalur, Panruti <br>
     
-    Arni & Melvisharam,Chennai –Neyveli,Chidambaram, Vridachalam, Kattumannarkoil, Vadalur, Panruti
-    
-    Villuppuram – Ulunurpettai, Gingee, Thiruvannamalai, Polur, Melmalayanur, Chetput
+    Villuppuram – Ulunurpettai, Gingee, Thiruvannamalai, Polur, Melmalayanur, Chetput <br><br>
     
      
-    Additional charges details
-    Toll fees, Inter-State Permit charges (if any) are extra borne by customer.
+    <h3>Additional charges details</h3>
+    Toll fees, Inter-State Permit charges (if any) are extra borne by customer.<br><br>
     
-    Drop Trips – Driver Beta Rs. 300. [Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.
+    Drop Trips – Driver Beta Rs. 300. [Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.<br><br>
     
-    Drop Trips – Minimum running must be 130 Kms per day.
+    Drop Trips – Minimum running must be 130 Kms per day.<br><br>
     
-    Round Trips – Driver beta is Rs. 400/- per day.
-
+    Round Trips – Driver beta is Rs. 400/- per day.<br><br>
+  </div>
     </script>
 
 <ul>
   <li><a class="active" href="#/">Home</a></li>
-  <li><a href="#/calculator">Pricing</a></li>
-  <li><a href="#/taskscheduler">About</a></li>
-  <li><a href="#/taskscheduler">Contact</a></li>
+  <li><a href="#/pricing">Pricing</a></li>
+  <li><a href="#/aboutus">About</a></li>
+  <li><a href="#/contactus">Contact</a></li>
 </ul>
 
   <div ng-view></div>
@@ -179,112 +196,23 @@ div.absolute {
         templateUrl: '',
       })
 
-      .when('/calculator', {
-        templateUrl: 'calculator.html',
-        controller: 'CalcController'
+      .when('/pricing', {
+        templateUrl: 'pricing.html',
+        // controller: 'CalcController'
       })
 
-      .when('/taskscheduler', {
-        templateUrl: 'taskscheduler.html',
-        controller: 'TaskController'
+      .when('/aboutus', {
+        templateUrl: 'aboutus.html',
+        // controller: 'TaskController'
+      })
+
+      .when('/contactus', {
+        templateUrl: 'contactus.html',
+        // controller: 'TaskController'
       })
 
       .otherwise({ redirectTo: '/' });
   });
-
-  app.controller('CalcController', function ($scope) {
-
-    $scope.a = 0;
-    $scope.b = 0;
-    $scope.operation = '+';
-
-    $scope.na = function () {
-      return $scope.a - 0;
-    }
-
-    $scope.nb = function () {
-      return $scope.b - 0;
-    }
-
-    $scope.rev = function () {
-      var temp = $scope.na();
-      $scope.a = $scope.nb();
-      $scope.b = temp;
-    }
-
-    $scope.calculate = function () {
-      if ($scope.operation == '+') {
-        return $scope.na() + $scope.nb();
-      }
-      else if ($scope.operation == '-') {
-        return $scope.a - $scope.b;
-      }
-      else if ($scope.operation == '*') {
-        return $scope.a * $scope.b;
-      }
-      else if ($scope.operation == '/') {
-        return $scope.a / $scope.b;
-      }
-
-      else if ($scope.operation == '%') {
-        return $scope.na() % $scope.nb();
-      }
-
-      else if ($scope.operation == '^') {
-        return $scope.a ** $scope.b;
-      }
-
-      else return "undef";
-    }
-
-  });
-
-  app.service('randomno', function () {
-
-    this.getRandomInt = function (min, max) {
-
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-
-    }
-  });
-
-  app.controller('TaskController', function ($scope, $interval, $timeout) {
-    $scope.names = [
-      { name: 'Lunch', time: "13:00" },
-      { name: 'Assignment', time: "17:00" },
-      { name: 'Quiz', time: "14:10" },
-      { name: 'Code Upload', time: "15:00" },
-      { name: 'Pray', time: "20:00" },
-      { name: 'Coffee', time: "16:30" },
-      { name: 'Tiffin', time: "19:15" },
-      { name: 'NPTEL', time: "18:15" },
-      { name: 'Dinner', time: "22:00" }
-    ];
-    $scope.orderByMe = function (x) {
-      $scope.myOrderBy = x;
-    }
-    $scope.theTime = new Date().toLocaleTimeString();
-    $interval(function () {
-      $scope.theTime = new Date().toLocaleTimeString();
-    }, 1000);
-    $scope.myHeader = "Stop Procrastinating!!! Start working!!!";
-    $timeout(function () {
-      $scope.myHeader = " Start working!!!";
-    }, 2000);
-
-
-  });
-
-  app.component("motivate", {
-    template: "<h4>Hello!, Work harder!!! You are already better in time management, than {{getresult}}% of our Users!!<h4>",
-    bindings: { name: '@' },
-    controller: function ($scope, randomno) {
-      $scope.getresult = randomno.getRandomInt(1, 100);
-
-    }
-  });
-
-
 
 </script>
 </body>
