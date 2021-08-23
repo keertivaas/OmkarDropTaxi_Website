@@ -9,12 +9,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
   <style>
-    ul {
+    #toolbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+#toolbar:hover{
+  text-decoration: none;
 }
 
 li {
@@ -85,6 +89,69 @@ div.absolute {
     #form1, #grid1{
       border: 2px solid #FFF;
     }
+
+    .timeline {
+	width:80%;
+	height: 20%;
+	list-style: none;
+	text-align: justify;
+	padding: 30% auto;
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(45%, rgba(255,255,255,0)), color-stop(51%, rgba(191,128,11,1)), color-stop(57%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0)));
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(191,128,11,1) 51%, rgba(255,255,255,0) 57%, rgba(255,255,255,0) 100%);
+}
+
+.timeline:after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+}
+
+.timeline li {
+	display: inline-block;
+	width: 20%;
+	height: 20%;
+	background: #F2BB13;
+	text-align: center;
+	line-height: 1.2;
+	position: relative;
+	border-radius: 50%;
+}
+.timeline li:before {
+	display: inline-block;
+	content: attr(data-year);
+	font-size: 26px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline li:nth-child(odd):before {
+	top: -40px;
+}
+.timeline li:nth-child(even):before {
+	bottom: -40px;
+}
+
+.timeline li:after {
+	display: inline-block;
+	content: attr(data-text);
+	font-size: 16px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline li:nth-child(odd):after {
+	bottom: 0;
+	margin-bottom: -10px;
+	transform: translate(-50%, 100%);
+}
+.timeline li:nth-child(even):after {
+	top: 0;
+	margin-top: -10px;
+	transform: translate(-50%, -100%);
+}
+
   </style>
   <script type="text/ng-template" id="">
     <br>
@@ -122,15 +189,15 @@ div.absolute {
   <h5 align="center">Being a pioneer in safe driving  and with the passionate in driving job,<br> Mr Srini (Founder of Omkar drop taxi) started the organization in 2017.<br> With the supportive and loyal customer base, Omkar drop taxi is successfully<br> stepping into 3rd Year Journey in Nov 2020.
 
 <br><br>​We offer One-Way Cab Booking / Drop Trips / One-Way & Round Trip Taxi /<br>One-Way Taxi Drop Taxi / One-Way Cab / Tourist cabs booking.</h5>
-
-<center><h4><u><a href = "./index.html#/aboutus" style="color:white">Read More</a></u></h4></center>
+<br>
+<center><a href = "./index.html#/aboutus" style="color:white"><button type="submit" class="btn btn-default">Read More</button></a></center>
 <br><br>
 <center><h3>Call us to know best offers and travel savings ideas</h3></center>
 <br>
 <h5 align="center">We at Omkar drop taxi often provide offers and suggest best <br>customized travel plan based on client`s business nature and <br>destinations. Feel free to reach us for any kind of travel suggestions.</h5>
 <br><br>
 
-  <div class="row row-no-padding">
+  <div class="row row-no-padding" style="width:100%">
     <div class="col-sm-3">
       <img src="./omkar_1.png" alt="Image1" width="400" height="400" align="right">
     </div>
@@ -146,7 +213,7 @@ div.absolute {
   </div>
 <br><br><br>
 <h3 align="center">Call us for any queries and free quotations</h3><br>
-<center><h4><u><a href = "./index.html#/contactus" style="color:white">Contact Us</a></u></h4></center>
+<center><a href = "./index.html#/contactus" style="color:white"><button type="submit" class="btn btn-default">Contact Us</button></a></center>
 <br><br>
 
 <h3 align="center"> OMKAR DROP TAXI<br> CHENNAI 600044.<h3>
@@ -162,12 +229,40 @@ div.absolute {
 </script>
 
   <script type="text/ng-template" id="pricing.html">
+    <br>
+    <h2 align="center">Taxi Fare</h2><br>
+    <h3 align="center">Calculate your journey as given below for estimation :</h3> <br>
+    <br>
+
+    <div style="width: 100%;overflow:auto;">
+      <div style="float:left; width: 50%; margin-left:50px; border-right: 2px solid #FFF;">
+        <h2 style="text-align:center">Pricing</h2><br>
+        <!-- <ul class="timeline">
+          <li data-year="" data-text="Know total Kms"></li>
+          <li data-year="" data-text="Calculate as per cab type"></li>
+          <li data-year="" data-text="Additional charges"></li>
+        </ul><br> -->
+        <img align="center" src= "./Rates.jpeg" width="85%" height ="50%">
+      </div>
+      <div style="float:left;">
+        <br><br>
+        <h4 style="text-align:center; vertical-align:middle">Additional charges details</h4><br>
+          <ul style="margin-left:50px">
+          <li>Toll fees, Inter-State Permit charges <br>(if any) are extra borne by customer.</li><br>
+          <li>Drop Trips – Driver Beta Rs. 300. <br>[Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.</li><br>
+          <li>Drop Trips – Minimum running must be 130 Kms per day.</li><br>
+          <li>Round Trips – Driver beta is Rs. 400/- per day.</li><br>
+          </ul>
+      </div>
+  </div>
+
     </script>
 
     <script type="text/ng-template" id="contactus.html">
       
-<div class="container" id="form1">
+<div class="container"  style="width:50%; height:50%;margin-top:10px" id="form1">
   <br><br>
+  <div style="align-self:center">
 <h3 align="center">Call us for any queries and free quotations</h3><br>
 <h4 align="center">Give us a call at +91 89394 62345/ 9444628249 <br>or leave us a message if you have any questions:<br>
 <br><br>
@@ -200,15 +295,17 @@ div.absolute {
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
+</div>
     </script>
   <script type="text/ng-template" id="aboutus.html">
-    <div class="abtus">
+    <br>
+    <div class="abtus" style="margin-left:50px">
     <h1>
       About Us
     </h1>
 
     <h3>Our services:-</h3>
-
+    <ul>
     <li>One-Way Cab Booking</li><br>
     <li>Drop Trips </li><br>
     <li>One-Way & Round Trip Taxi</li><br>
@@ -248,11 +345,11 @@ div.absolute {
   </div>
     </script>
 
-<ul>
-  <li><a class="active" href="#/">Home</a></li>
-  <li><a href="#/pricing">Pricing</a></li>
-  <li><a href="#/aboutus">About</a></li>
-  <li><a href="#/contactus">Contact</a></li>
+<ul id="toolbar">
+  <li><a class="active" style="text-decoration:none" href="#/">Home</a></li>
+  <li><a style="text-decoration:none" href="#/pricing">Pricing</a></li>
+  <li><a style="text-decoration:none" href="#/aboutus">About</a></li>
+  <li><a style="text-decoration:none" href="#/contactus">Contact</a></li>
 </ul>
 
   <div ng-view></div>
