@@ -17,9 +17,6 @@
   background-color: #333;
 }
 
-#toolbar:hover{
-  text-decoration: none;
-}
 
 li {
   float: left;
@@ -80,7 +77,7 @@ div.absolute {
       background-size: cover;
       color: white;
     }
-    .abtus{
+    #aboutus.html, #services.html, #routes.html, #addlch.html{
       text-shadow: 0 0 5px #000;
       color: white;
       /* background-image: url("aboutus.jpg"); */
@@ -150,6 +147,12 @@ div.absolute {
 	top: 0;
 	margin-top: -10px;
 	transform: translate(-50%, -100%);
+}
+
+.serv,.rout,.addl { clear: both; float: left; display: block; position: relative; } 
+
+#toolbar:hover, .serv:hover, .rout:hover, .addl:hover{
+  text-decoration: none;
 }
 
   </style>
@@ -299,11 +302,20 @@ div.absolute {
     </script>
   <script type="text/ng-template" id="aboutus.html">
     <br>
-    <div class="abtus" style="margin-left:50px">
+    <h3 align="center"> About Us </h3>
+    <ul style="display: block;">
+      <li class="serv"> <a style="text-decoration:none" href="#/aboutus/services">Our Services</a> </li><br><br>
+      <li class = "rout"> <a style="text-decoration:none" href="#/aboutus/routes">Our service routes</a> </li><br><br>
+      <li class = "addl"> <a style="text-decoration:none" href="#/aboutus/addlch">Additional charge details</a> </li><br><br>
+    </ul>
+  </script>
+    <!-- <br>
+<div class="abtus" style="margin-left:50px">
     <h1>
       About Us
-    </h1>
-
+    </h1> -->
+  <script type="text/ng-template" id="services.html">
+    <br>
     <h3>Our services:-</h3>
     <ul>
     <li>One-Way Cab Booking</li><br>
@@ -313,9 +325,10 @@ div.absolute {
     <li>One-Way Cab</li><br>
     <li>Tourist cabs booking.</li><br>
     </ul>
-    
+  </script>
     ​
-    <br><br>
+  <script type="text/ng-template" id = "routes.html">
+    <br>
     <h3>Our service routes :-</h3>
     Omkar Cabs  services offered assured one way drop & round  trips in the following cities provided you book your cabs at least 6-10 hours in advance.<br><br>
     
@@ -332,8 +345,10 @@ div.absolute {
     Arni & Melvisharam,Chennai –Neyveli,Chidambaram, Vridachalam, Kattumannarkoil, Vadalur, Panruti <br>
     
     Villuppuram – Ulunurpettai, Gingee, Thiruvannamalai, Polur, Melmalayanur, Chetput <br><br>
-    
-     
+  </script>  
+  
+    <script type="text/ng-template" id="addlch.html">
+      <br>
     <h3>Additional charges details</h3>
     Toll fees, Inter-State Permit charges (if any) are extra borne by customer.<br><br>
     
@@ -342,8 +357,8 @@ div.absolute {
     Drop Trips – Minimum running must be 130 Kms per day.<br><br>
     
     Round Trips – Driver beta is Rs. 400/- per day.<br><br>
-  </div>
     </script>
+  <!-- </div> -->
 
 <ul id="toolbar">
   <li><a class="active" style="text-decoration:none" href="#/">Home</a></li>
@@ -379,6 +394,21 @@ div.absolute {
       .when('/aboutus', {
         templateUrl: 'aboutus.html',
         // controller: 'TaskController'
+      })
+
+      .when('/aboutus/services', {
+        templateUrl: 'services.html',
+        // controller: 'CalcController'
+      })
+
+      .when('/aboutus/routes', {
+        templateUrl: 'routes.html',
+        // controller: 'CalcController'
+      })
+
+      .when('/aboutus/addlch', {
+        templateUrl: 'addlch.html',
+        // controller: 'CalcController'
       })
 
       .when('/contactus', {
