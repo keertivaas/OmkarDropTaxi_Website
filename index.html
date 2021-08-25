@@ -69,7 +69,15 @@ div.absolute {
     align-self: "center";
 }
 
+#sub, #rm, #ct {
+  transition-duration: 0.4s;
+  background-color: #FFF;
+}
 
+#sub:hover, #rm:hover, #ct:hover {
+  background-color: #080808; /* Green */
+  color: white;
+}
 
   </style>
 
@@ -203,7 +211,7 @@ div.absolute {
 
 <br><br>​We offer One-Way Cab Booking / Drop Trips / One-Way & Round Trip Taxi /<br>One-Way Taxi Drop Taxi / One-Way Cab / Tourist cabs booking.</h5>
 <br>
-<center><a href = "./index.html#/aboutus" style="color:white"><button type="submit" class="btn btn-default">Read More</button></a></center>
+<center><a href = "./index.html#/aboutus" style="color:white"><button id="rm" type="submit" class="btn btn-default">Read More</button></a></center>
 <br><br>
 <center><h3>Call us to know best offers and travel savings ideas</h3></center>
 <br>
@@ -226,7 +234,7 @@ div.absolute {
   </div>
 <br><br><br>
 <h3 align="center">Call us for any queries and free quotations</h3><br>
-<center><a href = "./index.html#/contactus" style="color:white"><button type="submit" class="btn btn-default">Contact Us</button></a></center>
+<center><a href = "./index.html#/contactus" style="color:white"><button id="ct" type="submit" class="btn btn-default">Contact Us</button></a></center>
 <br><br>
 
 <h3 align="center"> OMKAR DROP TAXI<br> CHENNAI 600044.<h3>
@@ -260,7 +268,7 @@ div.absolute {
       <div style="float:left;">
         <br><br>
         <h4 style="text-align:center; vertical-align:middle">Additional charges details</h4><br>
-          <ul style="margin-left:50px">
+          <ul style="margin-left:50px; font: size 20px;">
           <li>Toll fees, Inter-State Permit charges <br>(if any) are extra borne by customer.</li><br>
           <li>Drop Trips – Driver Beta Rs. 300. <br>[Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.</li><br>
           <li>Drop Trips – Minimum running must be 130 Kms per day.</li><br>
@@ -279,7 +287,7 @@ div.absolute {
 <h3 align="center">Call us for any queries and free quotations</h3><br>
 <h4 align="center">Give us a call at +91 89394 62345/ 9444628249 <br>or leave us a message if you have any questions:<br>
 <br><br>
-  <form action="">
+  <form action="mailto:someone@example.com" method="post" enctype="text/plain">
     <div class="form-group">
       <label for="fname">First Name:</label>
       <input type="text" class="form-control" id="fname">
@@ -305,7 +313,7 @@ div.absolute {
       <input type="text" class="form-control" id="msg">
     </div>
     <br>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <input id = "sub" type="submit" class="btn btn-default">
   </form>
 </div>
 </div>
