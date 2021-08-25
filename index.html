@@ -9,12 +9,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
   <style>
-    #toolbar {
+/* 
+    html{
+      width: 100%;
+      height:100%
+    } */
+
+  #toolbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(58, 57, 57);
 }
 
 
@@ -64,6 +70,7 @@ div.absolute {
 }
 
 
+
   </style>
 
 </head>
@@ -76,6 +83,8 @@ div.absolute {
       background-repeat: no-repeat;
       background-size: cover;
       color: white;
+      width: 100%;
+      height:100%
     }
     #aboutus.html, #services.html, #routes.html, #addlch.html{
       text-shadow: 0 0 5px #000;
@@ -85,6 +94,7 @@ div.absolute {
 
     #form1, #grid1{
       border: 2px solid #FFF;
+      border-radius: 5px;
     }
 
     .timeline {
@@ -263,7 +273,7 @@ div.absolute {
 
     <script type="text/ng-template" id="contactus.html">
       
-<div class="container"  style="width:50%; height:50%;margin-top:10px" id="form1">
+<div class="container"  style="width:50%; height:50%;margin-top:10px; padding:10px" id="form1">
   <br><br>
   <div style="align-self:center">
 <h3 align="center">Call us for any queries and free quotations</h3><br>
@@ -302,22 +312,26 @@ div.absolute {
     </script>
   <script type="text/ng-template" id="aboutus.html">
     <br>
-    <h3 align="center"> About Us </h3>
-    <ul style="display: block;">
-      <li class="serv"> <a style="text-decoration:none" href="#/aboutus/services">Our Services</a> </li><br><br>
-      <li class = "rout"> <a style="text-decoration:none" href="#/aboutus/routes">Our service routes</a> </li><br><br>
-      <li class = "addl"> <a style="text-decoration:none" href="#/aboutus/addlch">Additional charge details</a> </li><br><br>
+    <div style="text-align:center">
+    <div style="text-align:center;border:1px solid; display:inline-block; border-radius:5px; padding:25px">
+      <br>
+    <h3 align="center"> About Us </h3><br>
+    <ul style="display: block; padding: 0;">
+      <li class="serv" style="float:none; display:inline-block"> <a style="text-decoration:none" href="#/aboutus/services">Our Services</a> </li><br>
+      <li class = "rout" style="float:none; display:inline-block"> <a style="text-decoration:none" href="#/aboutus/routes">Our service routes</a> </li><br>
+      <li class = "addl" style="float:none; display:inline-block"> <a style="text-decoration:none" href="#/aboutus/addlch">Additional charge details</a> </li><br>
     </ul>
+  </div>
+  </div>
   </script>
-    <!-- <br>
-<div class="abtus" style="margin-left:50px">
-    <h1>
-      About Us
-    </h1> -->
+
   <script type="text/ng-template" id="services.html">
     <br>
-    <h3>Our services:-</h3>
-    <ul>
+    <div style="text-align:center">
+      <div style="text-align:center;border:1px solid; display:inline-block; border-radius:5px; padding:25px">
+    <h2>Our services:-</h2>
+    <br>
+    <ul style="font-size:18px">
     <li>One-Way Cab Booking</li><br>
     <li>Drop Trips </li><br>
     <li>One-Way & Round Trip Taxi</li><br>
@@ -325,11 +339,15 @@ div.absolute {
     <li>One-Way Cab</li><br>
     <li>Tourist cabs booking.</li><br>
     </ul>
+  </div>
+</div>
   </script>
-    ​
   <script type="text/ng-template" id = "routes.html">
     <br>
-    <h3>Our service routes :-</h3>
+    <div style="text-align:center">
+      <div style="text-align:center;border:1px solid; display:inline-block; border-radius:5px; padding:25px">
+    <h3>Our service routes :-</h3><br>
+    <p style="font-size:18px">
     Omkar Cabs  services offered assured one way drop & round  trips in the following cities provided you book your cabs at least 6-10 hours in advance.<br><br>
     
     Chennai, Pondicherry, Bangalore, Hosur, Trichy, Vellore, Neyveli, Kumbakonam.
@@ -345,11 +363,18 @@ div.absolute {
     Arni & Melvisharam,Chennai –Neyveli,Chidambaram, Vridachalam, Kattumannarkoil, Vadalur, Panruti <br>
     
     Villuppuram – Ulunurpettai, Gingee, Thiruvannamalai, Polur, Melmalayanur, Chetput <br><br>
+    </p>
+    </div>
+  </div>
   </script>  
   
     <script type="text/ng-template" id="addlch.html">
       <br>
+      <div style="text-align:center">
+        <div style="text-align:center;border:1px solid; display:inline-block; border-radius:5px; padding:25px">
     <h3>Additional charges details</h3>
+    <br>
+    <p style="font-size:18px">
     Toll fees, Inter-State Permit charges (if any) are extra borne by customer.<br><br>
     
     Drop Trips – Driver Beta Rs. 300. [Rs. 600 for above 400 kms] – Waiting Charges Rs. 120 per hour.<br><br>
@@ -357,6 +382,9 @@ div.absolute {
     Drop Trips – Minimum running must be 130 Kms per day.<br><br>
     
     Round Trips – Driver beta is Rs. 400/- per day.<br><br>
+    </p>
+  </div>
+</div>
     </script>
   <!-- </div> -->
 
@@ -388,32 +416,26 @@ div.absolute {
 
       .when('/pricing', {
         templateUrl: 'pricing.html',
-        // controller: 'CalcController'
       })
 
       .when('/aboutus', {
         templateUrl: 'aboutus.html',
-        // controller: 'TaskController'
       })
 
       .when('/aboutus/services', {
         templateUrl: 'services.html',
-        // controller: 'CalcController'
       })
 
       .when('/aboutus/routes', {
         templateUrl: 'routes.html',
-        // controller: 'CalcController'
       })
 
       .when('/aboutus/addlch', {
         templateUrl: 'addlch.html',
-        // controller: 'CalcController'
       })
 
       .when('/contactus', {
         templateUrl: 'contactus.html',
-        // controller: 'TaskController'
       })
 
       .otherwise({ redirectTo: '/' });
