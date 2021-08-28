@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var unirest = require("unirest"); //Dependency for Fast2SMS API to work
 const { response, urlencoded } = require('express');
 var app = express();
+app.use(express.static(__dirname))
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var MongoClient = require('mongodb').MongoClient;
@@ -12,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 
 //MongoDB Atlas connection string
-const url = "mongodb://127.0.0.1:27017/";
+const url = "mongodb+srv://admin:admin@omkardb.z8ns1.mongodb.net/";
 
 app.get('/', function (req, res, next) {
   res.status(200).sendFile(path.join(__dirname + '/index.html'));
