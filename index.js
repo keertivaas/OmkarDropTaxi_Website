@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 
 //MongoDB Atlas connection string
-const url = "mongodb+srv://admin:admin@omkardb.z8ns1.mongodb.net/OmkarDB?authSource=admin";
+const url = "mongodb+srv://admin:admin@omkardb.z8ns1.mongodb.net/";
 
 app.get('/', function (req, res, next) {
   res.status(200).sendFile(path.join(__dirname + '/index.html'));
@@ -25,11 +25,11 @@ app.post('/insert', urlencodedParser, function (req, res) {
   var phone = req.body.phone;
   var email = req.body.email;
   var msg = req.body.msg;
-  MongoClient.connect(url, function (err, db) {
+  MongoClient.connect(url, {useUnifiedTopology: true}, function (err, db) {
     if (err) throw err;
-    // var dbo = db.db("OmkarDB");
+    var dbo = db.db("OmkarDB");
     var myobj = { First_name: fname, Last_name: lname, Phone: phone, Email: email, Msg: msg };
-    db.collection("Omkar").insertOne(myobj, function (err, res) {
+    dbo.collection("Omkar").insertOne(myobj, function (err, res) {
       if (err) throw err;
       console.log("1 document inserted");
       db.close();
