@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var unirest = require("unirest"); //Dependency for Fast2SMS API to work
 const { response, urlencoded } = require('express');
 var app = express();
-app.use(express.static(__dirname))
+// app.use(express.static(__dirname + 'assets'))
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var MongoClient = require('mongodb').MongoClient;
